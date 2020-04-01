@@ -1,0 +1,31 @@
+{
+  "name": "twig-testing-library",
+  "version": "0.0.0-semantically-released",
+  "description": "Simple and complete Twig testing utilities that encourage good testing practices.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larowlan/twig-testing-library.git"
+  },
+  "keywords": [
+    "testing",
+    "ui",
+    "dom",
+    "jsdom",
+    "unit",
+    "integration",
+    "functional",
+    "end-to-end",
+    "e2e",
+    "twig"
+  ],
+  "author": "Lee Rowlands (https://github.com/larowlan)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larowlan/twig-testing-library/issues"
+  },
+  "homepage": "https://github.com/larowlan/twig-testing-library#readme"
+}
