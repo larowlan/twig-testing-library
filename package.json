@@ -27,5 +27,9 @@
   "bugs": {
     "url": "https://github.com/larowlan/twig-testing-library/issues"
   },
-  "homepage": "https://github.com/larowlan/twig-testing-library#readme"
+  "homepage": "https://github.com/larowlan/twig-testing-library#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.9.2",
+    "@testing-library/dom": "^7.2.0"
+  }
 }
