@@ -3,14 +3,14 @@ cache: npm
 notifications:
   email: false
 node_js:
-  - 10.0.0
+  - 10
   - 12
   - node
 install:
   - npm install
 script:
   - npm run lint
-  - npx run test
+  - npm run test
 branches:
   only:
     - master
