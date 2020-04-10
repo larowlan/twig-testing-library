@@ -1,14 +1,18 @@
 {
   "name": "twig-testing-library",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.0-development",
   "description": "Simple and complete Twig testing utilities that encourage good testing practices.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write \"{test,src}/**/*.js\"",
+    "lint": "prettier --check \"{test,src}/**/*.js\"",
+    "coverage": "jest --collect-coverage --collectCoverageFrom=\"src/**/*.js\"",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/larowlan/twig-testing-library.git"
+    "url": "https://github.com/larowlan/twig-testing-library.git"
   },
   "keywords": [
     "testing",
@@ -30,6 +34,15 @@
   "homepage": "https://github.com/larowlan/twig-testing-library#readme",
   "dependencies": {
     "@babel/runtime": "^7.9.2",
-    "@testing-library/dom": "^7.2.0"
+    "@testing-library/dom": "^7.2.0",
+    "drupal-attribute": "^1.0.2",
+    "twig": "^1.15.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "jest": "^25.3.0",
+    "prettier": "^2.0.4",
+    "semantic-release": "^17.0.4"
   }
 }

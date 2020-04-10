@@ -1,0 +1,8 @@
+<details class="accordion" {% if open %}open{% endif %}>
+  <summary class="accordion__title">{{ title|default('Accordion title') }}</summary>
+  <div class="accordion__content">
+    {% block accordion_content %}
+      <p>{% include "@twig-testing-library-tests/lorem-ipsum.twig" %}</p>
+    {% endblock %}
+  </div>
+</details>

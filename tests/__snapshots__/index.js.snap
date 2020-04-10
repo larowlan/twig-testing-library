@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test library by testing an accordion Can be initially rendered closed: First expand 1`] = `
+<details
+  class="accordion accordion--open"
+  open=""
+>
+  
+  
+  <summary
+    aria-expanded="true"
+    aria-pressed="true"
+    class="accordion__title"
+  >
+    Accordion title
+  </summary>
+  
+  
+  <div
+    class="accordion__content"
+  >
+    
+          
+    <p>
+      Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus.
+
+    </p>
+    
+      
+  </div>
+  
+
+</details>
+`;
+
+exports[`Test library by testing an accordion Can be initially rendered closed: Initial render 1`] = `
+<details
+  class="accordion"
+>
+  
+  
+  <summary
+    class="accordion__title"
+  >
+    Accordion title
+  </summary>
+  
+  
+  <div
+    class="accordion__content"
+  >
+    
+          
+    <p>
+      Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus.
+
+    </p>
+    
+      
+  </div>
+  
+
+</details>
+`;
+
+exports[`Test library by testing an accordion Can be initially rendered closed: Re-collapse 1`] = `
+<details
+  class="accordion"
+>
+  
+  
+  <summary
+    aria-expanded="false"
+    aria-pressed="false"
+    class="accordion__title"
+  >
+    Accordion title
+  </summary>
+  
+  
+  <div
+    class="accordion__content"
+  >
+    
+          
+    <p>
+      Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus.
+
+    </p>
+    
+      
+  </div>
+  
+
+</details>
+`;
+
+exports[`Test library by testing an accordion Can be initially rendered open: First collapse 1`] = `
+<details
+  class="accordion"
+>
+  
+  
+  <summary
+    aria-expanded="false"
+    aria-pressed="false"
+    class="accordion__title"
+  >
+    Accordion title
+  </summary>
+  
+  
+  <div
+    class="accordion__content"
+  >
+    
+          
+    <p>
+      Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus.
+
+    </p>
+    
+      
+  </div>
+  
+
+</details>
+`;
+
+exports[`Test library by testing an accordion Can be initially rendered open: Initial render 1`] = `
+<details
+  class="accordion accordion--open"
+  open=""
+>
+  
+  
+  <summary
+    class="accordion__title"
+  >
+    Accordion title
+  </summary>
+  
+  
+  <div
+    class="accordion__content"
+  >
+    
+          
+    <p>
+      Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus.
+
+    </p>
+    
+      
+  </div>
+  
+
+</details>
+`;
+
+exports[`Test library by testing an accordion Can be initially rendered open: Re-open 1`] = `
+<details
+  class="accordion accordion--open"
+  open=""
+>
+  
+  
+  <summary
+    aria-expanded="true"
+    aria-pressed="true"
+    class="accordion__title"
+  >
+    Accordion title
+  </summary>
+  
+  
+  <div
+    class="accordion__content"
+  >
+    
+          
+    <p>
+      Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus.
+
+    </p>
+    
+      
+  </div>
+  
+
+</details>
+`;
