@@ -202,7 +202,7 @@ instead of filing an issue on GitHub.
 [github-watch]: https://github.com/larowlan/twig-testing-library/watchers
 [github-star-badge]: https://img.shields.io/github/stars/larowlan/twig-testing-library.svg?style=social
 [github-star]: https://github.com/larowlan/twig-testing-library/stargazers
-[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20twig-testing-library%20by%20%40@TestingLib%20https%3A%2F%2Fgithub.com%2Flarowlan%2Ftwig-testing-library%20%F0%9F%91%8D
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20twig-testing-library%20by%20%40larowlan%20https%3A%2F%2Fgithub.com%2Flarowlan%2Ftwig-testing-library%20%F0%9F%91%8D
 [twitter-badge]: https://img.shields.io/twitter/url/https/github.com/larowlan/twig-testing-library.svg?style=social
 [bugs]: https://github.com/larowlan/twig-testing-library/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Acreated-desc
 [requests]: https://github.com/larowlan/twig-testing-library/issues?q=is%3Aissue+sort%3Areactions-%2B1-desc+label%3Aenhancement+is%3Aopen
