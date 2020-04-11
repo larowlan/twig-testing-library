@@ -1,7 +1,7 @@
 import { getQueriesForElement, prettyDOM } from "@testing-library/dom"
 import Twig from "twig"
 import fs from "fs"
-import "@babel/polyfill"
+import "regenerator-runtime/runtime"
 import DrupalAttribute from "drupal-attribute"
 
 const mountedContainers = new Set()

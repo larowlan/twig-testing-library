@@ -4,8 +4,7 @@ import {render, fireEvent} from "../src";
 
 describe('Test library by testing an accordion', () => {
   it('Can be initially rendered open', async () => {
-    //expect.assertions(8);
-    const { container, getByText, debug } = await render('./tests/fixtures/accordion.twig', {
+    const { container, getByText } = await render('./tests/fixtures/accordion.twig', {
       title: 'Accordion title',
       open: true,
     }, {
@@ -30,8 +29,7 @@ describe('Test library by testing an accordion', () => {
   });
 
   it('Can be initially rendered closed', async () => {
-    //expect.assertions(8);
-    const { container, getByText, debug } = await render('./tests/fixtures/accordion.twig', {
+    const { container, getByText } = await render('./tests/fixtures/accordion.twig', {
       title: 'Accordion title',
       open: false,
     }, {

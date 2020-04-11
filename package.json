@@ -3,8 +3,13 @@
   "version": "0.0.0-development",
   "description": "Simple and complete Twig testing utilities that encourage good testing practices.",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
+    "pretest": "npm run-script build",
+    "build": "rm -rf dist && rollup -c",
     "format": "prettier --write \"{test,src}/**/*.js\"",
     "lint": "prettier --check \"{test,src}/**/*.js\"",
     "coverage": "jest --collect-coverage --collectCoverageFrom=\"src/**/*.js\"",
@@ -35,14 +40,21 @@
   "dependencies": {
     "@babel/runtime": "^7.9.2",
     "@testing-library/dom": "^7.2.0",
+    "core-js": "^3.6.5",
     "drupal-attribute": "^1.0.2",
     "twig": "^1.15.0"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.8.7",
+    "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "babel-jest": "^25.3.0",
     "jest": "^25.3.0",
     "prettier": "^2.0.4",
+    "rollup": "^2.6.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.4",
     "semantic-release": "^17.0.4"
   }
 }
