@@ -124,7 +124,12 @@ export default { Accordion };
 
 ```javascript
 // __tests__/accordion.js
-import { render, fireEvent } from 'twig-testing-library'
+import { render, fireEvent, Twig } from 'twig-testing-library'
+
+// Add Twig extensions - see the Twig.js wiki.
+Twig.extendFilter("backwords", function(value) {
+  return value.split(" ").reverse().join(" ");
+});
 
 describe('Accordion toggling', () => {
   it('Can be rendered open, and then collapsed on click', async () => {
@@ -140,14 +145,7 @@ describe('Accordion toggling', () => {
     // Namespace support
     {
       'my_namespace': './some/path'
-    },
-    // Support twig extensions via a callback.
-    (Twig) => {
-      Twig.extendFilter("backwords", function(value) {
-        return value.split(" ").reverse().join(" ");
-      });
-    }
-    );
+    });
     const accordionElement = container.querySelector('.accordion');
     const accordion = new Accordion.Accordion(accordionElement);
     accordion.init();
