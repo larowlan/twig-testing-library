@@ -1,11 +1,16 @@
 /* eslint no-new: 0 */
 import Accordion from './fixtures/accordion';
-import {render, fireEvent} from "../src";
+import {render, fireEvent, Twig} from "../src";
+
+Twig.extendFilter("backwords", (text) => {
+  return text.split(" ").reverse().join(" ");
+});
 
 describe('Test library by testing an accordion', () => {
   it('Can be initially rendered open', async () => {
     const { container, getByText } = await render('./tests/fixtures/accordion.twig', {
-      title: 'Accordion title',
+      // This is intentionally backwards so we can test extending twig.
+      title: 'title Accordion',
       open: true,
     }, {
       'twig-testing-library-tests': './tests/fixtures/'
@@ -30,7 +35,8 @@ describe('Test library by testing an accordion', () => {
 
   it('Can be initially rendered closed', async () => {
     const { container, getByText } = await render('./tests/fixtures/accordion.twig', {
-      title: 'Accordion title',
+      // This is intentionally backwards so we can test extending twig.
+      title: 'title Accordion',
       open: false,
     }, {
       'twig-testing-library-tests': './tests/fixtures/'

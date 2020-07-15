@@ -10,12 +10,18 @@ if (typeof afterEach === "function") {
   afterEach(cleanup)
 }
 
-async function render(twigFile, context = {}, namespaces = {}) {
+async function render(
+  twigFile,
+  context = {},
+  namespaces = {},
+  twigCallback = () => {}
+) {
   const baseElement = document.body
   const container = baseElement.appendChild(document.createElement("div"))
 
   // Add it to the mounted containers to cleanup.
   mountedContainers.add(container)
+  twigCallback(Twig)
 
   container.innerHTML = await loadTemplate(twigFile, context, namespaces)
 
@@ -89,6 +95,6 @@ function cleanupContainer(container) {
 
 // just re-export everything from dom-testing-library
 export * from "@testing-library/dom"
-export { render, cleanup }
+export { render, cleanup, Twig }
 
 /* eslint func-name-matching:0 */

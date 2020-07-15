@@ -140,7 +140,14 @@ describe('Accordion toggling', () => {
     // Namespace support
     {
       'my_namespace': './some/path'
-    });
+    },
+    // Support twig extensions via a callback.
+    (Twig) => {
+      Twig.extendFilter("backwords", function(value) {
+        return value.split(" ").reverse().join(" ");
+      });
+    }
+    );
     const accordionElement = container.querySelector('.accordion');
     const accordion = new Accordion.Accordion(accordionElement);
     accordion.init();
