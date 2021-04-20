@@ -1,4 +1,4 @@
-<details class="accordion" {% if open %}open{% endif %}>
+<details {{ attributes.addClass('accordion') }} {% if open %}open{% endif %}>
   <summary class="accordion__title">{{ title|default('Accordion title')|backwords }}</summary>
   <div class="accordion__content">
     {% block accordion_content %}

@@ -77,7 +77,9 @@ const loadTemplate = async (file, context = {}, namespaces) => {
   return Twig.twigAsync({
     path: file,
   }).then((template) => {
-    context.attributes = new DrupalAttribute()
+    if (!context.hasOwnProperty("attributes")) {
+      context.attributes = new DrupalAttribute()
+    }
     return template.render(context)
   })
 }

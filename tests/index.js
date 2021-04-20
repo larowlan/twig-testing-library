@@ -1,6 +1,7 @@
 /* eslint no-new: 0 */
 import Accordion from './fixtures/accordion';
 import {render, fireEvent, Twig} from "../src";
+import DrupalAttribute from "drupal-attribute"
 
 Twig.extendFilter("backwords", (text) => {
   return text.split(" ").reverse().join(" ");
@@ -57,5 +58,20 @@ describe('Test library by testing an accordion', () => {
     expect(accordionElement.classList.contains('accordion--open')).toBe(false);
     expect(summaryElement.getAttribute('aria-expanded')).toEqual('false');
     expect(summaryElement.getAttribute('aria-pressed')).toEqual('false');
+  });
+
+  it('Can support passing attributes', async () => {
+    const attributes = new DrupalAttribute()
+    attributes.set('data-foo', 'bar')
+    const { container, getByText } = await render('./tests/fixtures/accordion.twig', {
+      // This is intentionally backwards so we can test extending twig.
+      title: 'title Accordion',
+      open: false,
+      attributes
+    }, {
+      'twig-testing-library-tests': './tests/fixtures/'
+    });
+    const accordionElement = container.querySelector('.accordion');
+    expect(accordionElement.dataset.foo).toEqual('bar');
   });
 });
