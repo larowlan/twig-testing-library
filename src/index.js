@@ -45,7 +45,9 @@ const loadTemplate = async (file, context = {}, namespaces) => {
 
   Twig.cache(false)
   Twig.extendFunction("create_attribute", (value) => {
-    if (typeof value === 'object' && value !== null) value = Object.entries(value)
+    if (typeof value === 'object' && value !== null) {
+      value = Object.entries(value)
+    }
     return new DrupalAttribute(value);
   })
   Twig.twigAsync = (options) => {
