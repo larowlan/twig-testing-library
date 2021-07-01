@@ -193,8 +193,8 @@ instead of filing an issue on GitHub.
 
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
-[build-badge]: https://img.shields.io/travis/larowlan/twig-testing-library.svg?style=flat-square
-[build]: https://travis-ci.org/larowlan/twig-testing-library
+[build-badge]: [![validate](https://github.com/larowlan/twig-testing-library/actions/workflows/node.js.yml/badge.svg)](https://github.com/larowlan/twig-testing-library/actions/workflows/node.js.yml)
+[build]: https://github.com/larowlan/twig-testing-library/actions
 [version-badge]: https://img.shields.io/npm/v/twig-testing-library.svg?style=flat-square
 [package]: https://www.npmjs.com/package/twig-testing-library
 [downloads-badge]: https://img.shields.io/npm/dm/twig-testing-library.svg?style=flat-square
