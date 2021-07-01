@@ -18,7 +18,7 @@
 <hr />
 
 <!-- prettier-ignore-start -->
-[![Build Status][build-badge]][build]
+[![Build status](https://github.com/larowlan/twig-testing-library/actions/workflows/node.js.yml/badge.svg)](https://github.com/larowlan/twig-testing-library/actions/workflows/node.js.yml)
 [![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends]
 [![MIT License][license-badge]][license]
 [![PRs Welcome][prs-badge]][prs] 
@@ -193,8 +193,6 @@ instead of filing an issue on GitHub.
 
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
-[build-badge]: [![validate](https://github.com/larowlan/twig-testing-library/actions/workflows/node.js.yml/badge.svg)](https://github.com/larowlan/twig-testing-library/actions/workflows/node.js.yml)
-[build]: https://github.com/larowlan/twig-testing-library/actions
 [version-badge]: https://img.shields.io/npm/v/twig-testing-library.svg?style=flat-square
 [package]: https://www.npmjs.com/package/twig-testing-library
 [downloads-badge]: https://img.shields.io/npm/dm/twig-testing-library.svg?style=flat-square
