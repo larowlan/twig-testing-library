@@ -1,44 +1,73 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
-
+name: validate
 on:
   push:
-    branches: [ master, beta ]
-  pull_request:
-    branches: [ master, beta ]
-
+    branches:
+      - 'master'
+      - 'beta'
+  pull_request: {}
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  main:
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+        node: [12, 14]
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Cache node modules
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
-      with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run lint
-    - run: npm test
-    - run: npx semantic-release
-      if: ${{ matrix.node-version }} === '14.x'
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.0
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v2
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+
+      - name: 🧹 Linting
+        run: npm run lint
+
+      - name: ✅ Tests
+        run: npm run test
+
+  release:
+    needs: main
+    runs-on: ubuntu-latest
+    if:
+      ${{ github.repository == 'larowlan/twig-testing-library' &&
+      contains('refs/heads/master',github.ref) && github.event_name == 'push' }}
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.0
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v2
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+
+      - name: 🏗 Run build script
+        run: npm run build
+
+      - name: 🚀 Release
+        uses: cycjimmy/semantic-release-action@v2
+        with:
+          semantic_version: 17
+          branches: |
+            [
+              'master'
+            ]
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
