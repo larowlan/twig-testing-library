@@ -74,4 +74,10 @@ describe('Test library by testing an accordion', () => {
     const accordionElement = container.querySelector('.accordion');
     expect(accordionElement.dataset.foo).toEqual('bar');
   });
+
+  it('Can nominate a root', async () => {
+    const { getByText } = await render('foo.twig',
+      {}, {}, () => {}, './tests/fixtures');
+    expect(getByText('Hey there :wave:')).toBeTruthy();
+  });
 });

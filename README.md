@@ -145,7 +145,14 @@ describe('Accordion toggling', () => {
     // Namespace support
     {
       'my_namespace': './some/path'
-    });
+    },
+    // Callback support
+    (Twig) => {
+      // Do something with Twig here.
+    },
+    // Template root folder support.
+    '/path/to/where/templates/live'
+    );
     const accordionElement = container.querySelector('.accordion');
     const accordion = new Accordion.Accordion(accordionElement);
     accordion.init();

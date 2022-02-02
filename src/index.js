@@ -14,7 +14,8 @@ async function render(
   twigFile,
   context = {},
   namespaces = {},
-  twigCallback = () => {}
+  twigCallback = () => {},
+  root = ''
 ) {
   const baseElement = document.body
   const container = baseElement.appendChild(document.createElement("div"))
@@ -23,7 +24,7 @@ async function render(
   mountedContainers.add(container)
   twigCallback(Twig)
 
-  container.innerHTML = await loadTemplate(twigFile, context, namespaces)
+  container.innerHTML = await loadTemplate(twigFile, context, namespaces, root)
 
   return {
     container,
@@ -38,7 +39,7 @@ async function render(
   }
 }
 
-const loadTemplate = async (file, context = {}, namespaces) => {
+const loadTemplate = async (file, context = {}, namespaces, root) => {
   Twig.registryReset = () => {
     Twig.Templates.registry = {}
   }
@@ -80,7 +81,7 @@ const loadTemplate = async (file, context = {}, namespaces) => {
     })
   }
   return Twig.twigAsync({
-    path: file,
+    path: root ? `${root}/${file}` : file,
   }).then((template) => {
     if (!context.hasOwnProperty("attributes")) {
       context.attributes = new DrupalAttribute()
